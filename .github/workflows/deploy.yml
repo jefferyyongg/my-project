@@ -12,7 +12,6 @@ jobs:
         with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
-          password: ${{secrets.SSH_ENV_KEY}}
           username: ${{secrets.SSH_USERNAME}}
 
           script: |
