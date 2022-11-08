@@ -12,7 +12,7 @@ jobs:
         with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
-          env_key: ${{secrets.SSH_ENV_KEY}}
+          password: ${{secrets.SSH_ENV_KEY}}
           username: ${{secrets.SSH_USERNAME}}
 
           script: |
