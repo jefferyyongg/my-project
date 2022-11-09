@@ -30,3 +30,4 @@ jobs:
           script: |
             git clone git@github.com:jefferyyongg/my-project.git /var/www/html
             echo 'Deployment successful to digital ocean'
+            sudo systemctl restart nginx
