@@ -28,7 +28,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
 
           script: |
-            cd /var/www
+            cd /var/www/html/
             sudo su -l www-data -s /bin/bash
             git pull origin main
             echo 'Deployment successful to digital ocean'
