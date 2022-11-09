@@ -28,6 +28,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
 
           script: |
-            mkdir test
+            sudo su -l www-data -s /bin/bash
+            cd /var/www/html/
+            git pull origin main
             echo 'Deployment successful to digital ocean'
             sudo systemctl restart nginx
