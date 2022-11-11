@@ -3,7 +3,7 @@ name: Test and Deploy
 on: push
 jobs:
   run-test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
 
   deploy:
     needs: run-test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
@@ -28,6 +28,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
 
           script: |
-            mkdir test
+            cd /var/www/html/
+            git pull origin main
             echo 'Deployment successful to digital ocean'
             sudo systemctl restart nginx
